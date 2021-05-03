@@ -1,0 +1,34 @@
+<div class="col-md-12" *ngIf="showInputForm">
+  <div class="col-md-6">
+    <label class="title">Students</label>
+  </div>
+  <div class="col-md-6">
+    <div class="text-right">
+      <select class="select" *ngIf="studentData.length > 0">
+        <option
+          [value]="student.studentName"
+          *ngFor="let student of studentData"
+        >
+          {{ student.studentName }}
+        </option>
+      </select>
+    </div>
+    <div class="text-right mt-3">
+      <button
+        class="btn btn-primary"
+        type="button"
+        (click)="studentForm = !studentForm"
+      >
+        Add New Student
+      </button>
+    </div>
+    <div class="text-right">
+      <app-students-edit
+        *ngIf="studentForm"
+        (studentnameAdded)="onStudentNameAdded($event)"
+        (studentnameDeleted)="onStudentNameDeleted($event)"
+      >
+      </app-students-edit>
+    </div>
+  </div>
+</div>

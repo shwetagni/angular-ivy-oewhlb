@@ -1,0 +1,17 @@
+.form-control {
+  width: 6cm;
+  margin-top: 20px;
+}
+
+.course-name {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.check {
+  width: 0.6cm;
+  height: 0.6cm;
+  border: 5px black;
+  background-color: blue;
+  margin-left: -35px !important;
+}

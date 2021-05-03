@@ -1,4 +1,6 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<header><label>Course & Student Maintenance</label></header>
+<app-course-list (courseSelected)="onSelectionCourse($event)"></app-course-list>
+<app-students-list [selectedCourse]="selectedCourse"></app-students-list>
+
+<!-- <app-shopping></app-shopping>
+<app-firstfile></app-firstfile> -->

@@ -1,0 +1,28 @@
+<div class="text-right course-name">
+  <input
+    type="text"
+    id="item_text"
+    class="form-control"
+    placeholder="Course Name"
+    [(ngModel)]="value"
+    #nameInput
+  />
+</div>
+
+<div class="checkbox">
+  <input
+    title="Add Course"
+    class="check"
+    type="checkbox"
+    #checkBox
+    (change)="onAddCourse($event.srcElement.checked)"
+  />
+  <button
+    class="value"
+    role="button"
+    (click)="onDeleteCourse()"
+    title="Clear text"
+  >
+    <span>x</span>
+  </button>
+</div>

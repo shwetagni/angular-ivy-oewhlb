@@ -1,0 +1,36 @@
+<div class="col-md-12">
+  <div class="col-md-6">
+    <label class="title">Course</label>
+  </div>
+  <div class="col-md-6">
+    <div class="text-right">
+      <select class="select" (change)="onCourseSelected($event.target.value)">
+        <option>--Select--</option>
+        <option
+          class="option"
+          *ngFor="let course of coursename"
+          [value]="course.name"
+        >
+          {{ course.name }}
+        </option>
+      </select>
+    </div>
+    <div class="text-right mt-3">
+      <button
+        class="btn btn-primary"
+        type="button"
+        (click)="showInputForm = !showInputForm"
+      >
+        Add New Course
+      </button>
+    </div>
+    <div class="text-right">
+      <app-course-edit
+        *ngIf="showInputForm"
+        (coursenameAdded)="onCourseNameAdded($event)"
+        (coursenameDeleted)="onCourseNameDeleted($event)"
+      >
+      </app-course-edit>
+    </div>
+  </div>
+</div>
